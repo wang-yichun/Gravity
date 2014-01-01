@@ -203,7 +203,17 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
  /cygdrive/d/Development/cocos2d-x/cocos2d-x-2.2.1/projects/Gravity/proj.android/../../../cocos2dx/support/data_support/uthash.h \
  /cygdrive/d/Development/cocos2d-x/cocos2d-x-2.2.1/projects/Gravity/proj.android/../../../cocos2dx/support/component/CCComponent.h \
  /cygdrive/d/Development/cocos2d-x/cocos2d-x-2.2.1/projects/Gravity/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h \
- jni/../../Classes/HelloWorldScene.h
+ jni/../../Classes/AppMacros.h jni/../../Classes/HelloWorldScene.h \
+ jni/../../Classes/TestScene.h jni/../../Classes/sqlite/sqlite_header.h \
+ jni/../../Classes/sqlite/KompexSQLitePrerequisites.h \
+ jni/../../Classes/sqlite/KompexSQLiteDatabase.h \
+ jni/../../Classes/sqlite/sqlite3.h \
+ jni/../../Classes/sqlite/KompexSQLiteStatement.h \
+ jni/../../Classes/sqlite/KompexSQLiteException.h \
+ jni/../../Classes/sqlite/KompexSQLiteStreamRedirection.h \
+ /cygdrive/d/Development/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
+ jni/../../Classes/sqlite/KompexSQLiteBlob.h \
+ jni/../../Classes/CoreScene.h jni/../../Classes/ytools/YFile.h
 
 jni/../../Classes/AppDelegate.h:
 
@@ -613,4 +623,30 @@ jni/../../Classes/AppDelegate.h:
 
 /cygdrive/d/Development/cocos2d-x/cocos2d-x-2.2.1/projects/Gravity/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h:
 
+jni/../../Classes/AppMacros.h:
+
 jni/../../Classes/HelloWorldScene.h:
+
+jni/../../Classes/TestScene.h:
+
+jni/../../Classes/sqlite/sqlite_header.h:
+
+jni/../../Classes/sqlite/KompexSQLitePrerequisites.h:
+
+jni/../../Classes/sqlite/KompexSQLiteDatabase.h:
+
+jni/../../Classes/sqlite/sqlite3.h:
+
+jni/../../Classes/sqlite/KompexSQLiteStatement.h:
+
+jni/../../Classes/sqlite/KompexSQLiteException.h:
+
+jni/../../Classes/sqlite/KompexSQLiteStreamRedirection.h:
+
+/cygdrive/d/Development/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
+
+jni/../../Classes/sqlite/KompexSQLiteBlob.h:
+
+jni/../../Classes/CoreScene.h:
+
+jni/../../Classes/ytools/YFile.h:
