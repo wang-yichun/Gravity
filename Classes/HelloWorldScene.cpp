@@ -54,8 +54,13 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	CCLabelTTF* pLabel = CCLabelTTF::create("Hello World - Win32", "Arial", 24);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	CCLabelTTF* pLabel = CCLabelTTF::create("Hello World - Android", "Arial", 24);
+#else
+	CCLabelTTF* pLabel = CCLabelTTF::create("Hello World - Other", "Arial", 24);
+#endif
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
@@ -64,8 +69,14 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
 
+	CCLabelBMFont * label_1 = CCLabelBMFont::create("abc","hwzs.fnt");
+	label_1->setPosition(ccp(origin.x + visibleSize.width/2,
+		origin.y + visibleSize.height - pLabel->getContentSize().height));
+	this->addChild(label_1, 2);
+
     // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+    //CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+	CCSprite* pSprite = CCSprite::createWithSpriteFrameName("Bell_Pepper.png");
 
     // position the sprite on the center of the screen
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));

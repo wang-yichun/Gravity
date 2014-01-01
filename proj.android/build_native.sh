@@ -4,6 +4,8 @@ APPNAME="Gravity"
 
 buildexternalsfromsource=
 
+NDK_ROOT=/cygdrive/d/Development/android-ndk-r9b
+
 usage(){
 cat << EOF
 usage: $0 [options]

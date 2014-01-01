@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="3" height="3" tilewidth="256" tileheight="256">
+ <tileset firstgid="1" name="art_group_01" tilewidth="256" tileheight="256">
+  <image source="art_group_01.png" width="1024" height="2048"/>
+  <tile id="1">
+   <properties>
+    <property name="id" value="blue_ball"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="id" value="apple"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="3" height="3">
+  <data encoding="base64" compression="zlib">
+   eJxjY2BgYEPCzGh8EAYABCAANA==
+  </data>
+ </layer>
+</map>

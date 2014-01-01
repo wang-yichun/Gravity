@@ -65,7 +65,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes\ytools;..\Classes\sqlite;..\Classes\NDKHelper;..\Classes\jansson;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -128,12 +128,54 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\CoreScene.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\jansson\dump.c" />
+    <ClCompile Include="..\Classes\jansson\error.c" />
+    <ClCompile Include="..\Classes\jansson\hashtable.c" />
+    <ClCompile Include="..\Classes\jansson\load.c" />
+    <ClCompile Include="..\Classes\jansson\memory.c" />
+    <ClCompile Include="..\Classes\jansson\pack_unpack.c" />
+    <ClCompile Include="..\Classes\jansson\strbuffer.c" />
+    <ClCompile Include="..\Classes\jansson\strconv.c" />
+    <ClCompile Include="..\Classes\jansson\utf.c" />
+    <ClCompile Include="..\Classes\jansson\value.c" />
+    <ClCompile Include="..\Classes\NDKHelper\NDKCallbackNode.cpp" />
+    <ClCompile Include="..\Classes\NDKHelper\NDKHelper.cpp" />
+    <ClCompile Include="..\Classes\RoleLayer.cpp" />
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteBlob.cpp" />
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteDatabase.cpp" />
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteStatement.cpp" />
+    <ClCompile Include="..\Classes\sqlite\sqlite3.c" />
+    <ClCompile Include="..\Classes\TestScene.cpp" />
+    <ClCompile Include="..\Classes\ytools\YFile.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\AppMacros.h" />
+    <ClInclude Include="..\Classes\CoreScene.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\jansson\hashtable.h" />
+    <ClInclude Include="..\Classes\jansson\jansson.h" />
+    <ClInclude Include="..\Classes\jansson\jansson_config.h" />
+    <ClInclude Include="..\Classes\jansson\jansson_private.h" />
+    <ClInclude Include="..\Classes\jansson\strbuffer.h" />
+    <ClInclude Include="..\Classes\jansson\utf.h" />
+    <ClInclude Include="..\Classes\NDKHelper\NDKCallbackNode.h" />
+    <ClInclude Include="..\Classes\NDKHelper\NDKHelper.h" />
+    <ClInclude Include="..\Classes\RoleLayer.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteBlob.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteDatabase.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteException.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLitePrerequisites.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteStatement.h" />
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteStreamRedirection.h" />
+    <ClInclude Include="..\Classes\sqlite\sqlite3.h" />
+    <ClInclude Include="..\Classes\sqlite\sqlite3ext.h" />
+    <ClInclude Include="..\Classes\sqlite\sqlite_header.h" />
+    <ClInclude Include="..\Classes\TestScene.h" />
+    <ClInclude Include="..\Classes\ytools\YFile.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

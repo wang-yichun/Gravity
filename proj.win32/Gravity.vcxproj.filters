@@ -7,6 +7,18 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\sqlite">
+      <UniqueIdentifier>{6472e7ec-0941-4094-8e2f-d03e22ed01d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\NDKHelper">
+      <UniqueIdentifier>{6e13ceae-63ed-4c78-8954-053838addf0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\jansson">
+      <UniqueIdentifier>{53534cb9-482b-45da-ad04-c17498f00b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ytools">
+      <UniqueIdentifier>{48f818a6-f80c-4155-9d3b-f466b47f6caa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -18,6 +30,66 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CoreScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RoleLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TestScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteBlob.cpp">
+      <Filter>Classes\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteDatabase.cpp">
+      <Filter>Classes\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sqlite\KompexSQLiteStatement.cpp">
+      <Filter>Classes\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\sqlite\sqlite3.c">
+      <Filter>Classes\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NDKHelper\NDKCallbackNode.cpp">
+      <Filter>Classes\NDKHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NDKHelper\NDKHelper.cpp">
+      <Filter>Classes\NDKHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\dump.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\error.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\hashtable.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\load.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\memory.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\pack_unpack.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\strbuffer.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\strconv.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\utf.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jansson\value.c">
+      <Filter>Classes\jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ytools\YFile.cpp">
+      <Filter>Classes\ytools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -28,6 +100,72 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CoreScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RoleLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TestScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteBlob.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteDatabase.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteException.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLitePrerequisites.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteStatement.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\KompexSQLiteStreamRedirection.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\sqlite_header.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\sqlite3.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\sqlite\sqlite3ext.h">
+      <Filter>Classes\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NDKHelper\NDKCallbackNode.h">
+      <Filter>Classes\NDKHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NDKHelper\NDKHelper.h">
+      <Filter>Classes\NDKHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\hashtable.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\jansson.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\jansson_config.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\jansson_private.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\strbuffer.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jansson\utf.h">
+      <Filter>Classes\jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ytools\YFile.h">
+      <Filter>Classes\ytools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
