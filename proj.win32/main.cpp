@@ -15,7 +15,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     // create the application instance
     AppDelegate app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
-    eglView->setViewName("Gravity");
-    eglView->setFrameSize(480, 320);
+	eglView->setViewName("Gravity");
+	eglView->setFrameSize(1280, 800);
+	eglView->setFrameZoomFactor(.8f);
     return CCApplication::sharedApplication()->run();
 }
