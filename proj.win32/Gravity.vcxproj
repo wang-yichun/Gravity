@@ -128,7 +128,9 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\CellSprite.cpp" />
     <ClCompile Include="..\Classes\CoreScene.cpp" />
+    <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\jansson\dump.c" />
     <ClCompile Include="..\Classes\jansson\error.c" />
@@ -158,9 +160,11 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
+    <ClInclude Include="..\Classes\CellSprite.h" />
     <ClInclude Include="..\Classes\CoreScene.h" />
     <ClInclude Include="..\Classes\CreaterConfig.h" />
     <ClInclude Include="..\Classes\GameLayer.h" />
+    <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\jansson\hashtable.h" />
     <ClInclude Include="..\Classes\jansson\jansson.h" />
