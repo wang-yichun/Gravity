@@ -33,8 +33,15 @@ public:
 			CCRect map_rect = CCRectMake(0,0,map_size.width,map_size.height);
 			return map_rect.containsPoint(loc_or_pos);
 		} else {
-			int idx = int(getMapGridSize().width) * int(loc_or_pos.y) + int(loc_or_pos.x);
-			return (idx >= 0 && (size_t)idx < getMap().size());
+			bool in_scope = false;
+			if (int(loc_or_pos.x) >= 0 && int(loc_or_pos.x) < int(getMapGridSize().width)) {
+				if (int(loc_or_pos.y) >= 0 && int(loc_or_pos.y) < int(getMapGridSize().height)) {
+					in_scope = true;
+				}
+			}
+			return in_scope;
+			//int idx = int(getMapGridSize().width) * int(loc_or_pos.y) + int(loc_or_pos.x);
+			//return (idx >= 0 && idx < getMap().size());
 		}
 		
 	}

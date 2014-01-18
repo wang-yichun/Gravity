@@ -12,13 +12,13 @@ enum TCoreScene {
 };
 
 class CoreScene :
-	public CCScene
-{
+	public CCScene {
 public:
 	CoreScene(void);
 	virtual ~CoreScene(void);
 	virtual bool init();
 	CREATE_FUNC(CoreScene);
 
+	void step(float dt);
 };
 

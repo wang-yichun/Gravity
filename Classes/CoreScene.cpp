@@ -2,6 +2,8 @@
 #include "RoleLayer.h"
 #include "AppMacros.h"
 #include "GameLayer.h"
+#include "SystemManager.h"
+#include "GameManager.h"
 
 CoreScene::CoreScene(void) {}
 
@@ -17,5 +19,14 @@ bool CoreScene::init() {
 	Stage::GetInstance() -> refleshCellShow_adv();
 
 	SystemManager::GetInstance(); // init
+
+	GameManager::GetInstance() -> prepareStage(); // init
+	
+	schedule(schedule_selector(CoreScene::step), 1.0f);
+
 	return true;
+}
+
+void CoreScene::step(float dt) {
+	GameManager::GetInstance() -> stepStage();
 }
