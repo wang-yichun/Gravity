@@ -32,6 +32,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	// init sprite frame cache
 	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("art_group_01.plist");
+	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("CSProj/CSProj0.plist");
 
 	// init database
 	bool _has_file;
