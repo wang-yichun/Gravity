@@ -1,7 +1,8 @@
 ﻿#include "MapCell.h"
 #include "CreaterConfig.h"
 
-MapCell::MapCell(): primaryNode(NULL), primarySprite(NULL), secondaryNode(NULL), secondarySprite(NULL), parent(NULL), infoTTF(NULL) {}
+MapCell::MapCell(): primaryNode(NULL), primarySprite(NULL), secondaryNode(NULL), secondarySprite(NULL),
+	pollNode(NULL), pollSprite(NULL), parent(NULL), infoTTF(NULL) {}
 MapCell::~MapCell() {}
 
 void MapCell::setMapCell(CCPoint loc, enumMapCellCode code) {
@@ -26,13 +27,16 @@ void MapCell::setMapCell(CCPoint loc, enumMapCellCode code) {
 	if ( this -> secondaryNode == NULL) {
 		this -> secondaryNode = CCNode::create();
 	}
+	if ( this -> pollNode == NULL) {
+		this -> pollNode = CCNode::create();
+	}
 
 	this -> setCode(code);
 }
 
 void MapCell::setCode(enumMapCellCode _code) {
 	this -> code = _code;
-    
+    this -> poll_code = emcpcNull;
     if (DEBUG_CELL_INFO_SHOW) {
         stringstream ss;
         ss << loc.x << "," << loc.y << endl;
@@ -47,6 +51,17 @@ void MapCell::setCode(enumMapCellCode _code) {
     }
     
 	refleshSprite();
+}
+
+void MapCell::setPollCode(enumMapCellPollCode poll_code) {
+	if (this -> poll_code == emcpcNull) {
+		this -> poll_code = poll_code;
+		pollSprite = CCSprite::createWithSpriteFrameName("mapcell/poll_red.png");
+		pollSprite -> setOpacity(0);
+		pollSprite -> runAction(CCFadeIn::create(1.0f));
+		pollNode -> removeAllChildren();
+		pollNode -> addChild(pollSprite);
+	}
 }
 
 void MapCell::setParent(CCNode *pNode) {

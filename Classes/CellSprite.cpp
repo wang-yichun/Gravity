@@ -1,5 +1,6 @@
 #include "CellSprite.h"
 #include "Stage.h"
+#include "GameManager.h"
 
 CellSprite::CellSprite():
 	m_primarySprite(NULL)
@@ -15,10 +16,95 @@ bool CellSprite::init() {
 		m_primarySprite -> setAnchorPoint(ccp(.5f, .0f));
 		this -> addChild(m_primarySprite);
 		m_status = ecssNormal;
+		m_pollCode = enumMapCellPollCode::emcpcPoll;
 	} else {
 		return false;
 	}
 	return true;
+}
+
+void CellSprite::poll() {
+	Stage * stage = Stage::GetInstance();
+	stage -> cell(m_curLoc).setPollCode( this -> m_pollCode );
+}
+
+void CellSprite::move_random() {
+	Stage * stage = Stage::GetInstance();
+	if (this -> m_status == ecssNormal) {
+		CCPoint curLoc = this -> m_curLoc;
+		CCPoint tarLoc = this -> m_tarLoc;
+
+		enumDirectSelectStatus select_status = edssNormal;
+		int select_count = 0, select_max_count = 5;
+		CCPoint dest;
+		while (select_status == edssNormal) {
+			if (curLoc.equals(tarLoc) == true) {
+				// 需要发起一次随机移动通知;
+				dest = curLoc;
+				int dir = (int)(CCRANDOM_0_1() * 9);
+				switch (dir) {
+				case 0:{
+					break;
+					   }
+				case 1:{
+					dest.x += 1;
+					break;
+					   }
+					   break;
+				case 2:{
+					dest.x += 1;
+					dest.y += 1;
+					break;
+					   }
+					   break;
+				case 3:{
+					dest.y += 1;
+					break;
+					   }
+				case 4:{
+					dest.x -= 1;
+					dest.y += 1;
+					break;
+					   }
+				case 5:{
+					dest.x -= 1;
+					break;
+					   }
+					   break;
+				case 6:{
+					dest.x -= 1;
+					dest.y -= 1;
+					break;
+					   }
+					   break;
+				case 7:{
+					dest.y -= 1;
+					break;
+					   }
+				case 8:{
+					dest.x += 1;
+					dest.y -= 1;
+					break;
+					   }
+				default:
+					break;
+				}
+				if (stage -> isInScope(dest)) { // 首先保证在整体范围内;
+					if ( MapCell::GetCellCodeIsNullShow( stage -> cell(dest).code ) == false ) {
+						select_status = edssSuccess;
+					}
+				}
+				if (++select_count >= select_max_count) {
+					select_status = edssFailed;
+				}
+			}
+		}
+
+		if (select_status == edssSuccess){
+			this -> m_tarLoc = dest;
+			this -> beganMove();
+		}
+	}
 }
 
 void CellSprite::beganMove() {
@@ -35,8 +121,10 @@ void CellSprite::beganMove() {
 
 void CellSprite::beganMove_over(CCNode * pSender) {
 	CellSprite * me = (CellSprite *)pSender;
+	Stage * stage = Stage::GetInstance();
 	me -> m_status = ecssNormal;
 	me -> m_curLoc = m_tarLoc;
+	this -> poll();
 }
 
 void CellSprite::runAction_normal() {
