@@ -24,7 +24,7 @@ bool CellSprite::init() {
 void CellSprite::beganMove() {
 	Stage * stage = Stage::GetInstance();
 	m_status = ecssMove;
-	CCLOG("beganMove:(%f,%f)", m_tarLoc.x, m_tarLoc.y);
+	//CCLOG("beganMove:(%f,%f)", m_tarLoc.x, m_tarLoc.y);
 	CCPoint tarPos = stage -> loc2pos(m_tarLoc);
 	CCActionInterval * delay = CCDelayTime::create(CCRANDOM_0_1());
 	CCActionInterval * move = CCMoveTo::create(.5f, tarPos);

@@ -53,52 +53,76 @@ void GameManager::stepCellSprites(CellSprite * cell_node) {
 	if (cell_node -> m_status == ecssNormal) {
 		CCPoint curLoc = cell_node -> m_curLoc;
 		CCPoint tarLoc = cell_node -> m_tarLoc;
-		if (curLoc.equals(tarLoc) == true) {
-			// 需要发起一次随机移动通知;
-			int r = (int)(CCRANDOM_0_1() * 4);
-			CCPoint dest = curLoc;
-			switch (r) {
-			case 0:{
-				dest.x += 1;
-				if (stage -> isInScope(dest)) {
-					cell_node -> m_tarLoc = dest;
+
+		enumDirectSelectStatus select_status = edssNormal;
+		int select_count = 0, select_max_count = 5;
+		CCPoint dest;
+		while (select_status == edssNormal) {
+			if (curLoc.equals(tarLoc) == true) {
+				// 需要发起一次随机移动通知;
+				dest = curLoc;
+				int dir = (int)(CCRANDOM_0_1() * 9);
+				switch (dir) {
+				case 0:{
+					break;
+					   }
+				case 1:{
+					dest.x += 1;
+					break;
+					   }
+					   break;
+				case 2:{
+					dest.x += 1;
+					dest.y += 1;
+					break;
+					   }
+					   break;
+				case 3:{
+					dest.y += 1;
+					break;
+					   }
+				case 4:{
+					dest.x -= 1;
+					dest.y += 1;
+					break;
+					   }
+				case 5:{
+					dest.x -= 1;
+					break;
+					   }
+					   break;
+				case 6:{
+					dest.x -= 1;
+					dest.y -= 1;
+					break;
+					   }
+					   break;
+				case 7:{
+					dest.y -= 1;
+					break;
+					   }
+				case 8:{
+					dest.x += 1;
+					dest.y -= 1;
+					break;
+					   }
+				default:
+					break;
 				}
-				break;
-				   }
-			case 1:{
-				dest.y += 1;
-				if (stage -> isInScope(dest)) {
-					cell_node -> m_tarLoc = dest;
+				if (stage -> isInScope(dest)) { // 首先保证在整体范围内;
+					if ( MapCell::GetCellCodeIsNullShow( stage -> cell(dest).code ) == false ) {
+						select_status = edssSuccess;
+					}
 				}
-				break;
-				   }
-				break;
-			case 2:{
-				dest.x -= 1;
-				if (stage -> isInScope(dest)) {
-					cell_node -> m_tarLoc = dest;
-				} else {
-					CCLOG("case 2: (%f,%f)", dest);
+				if (++select_count >= select_max_count) {
+					select_status = edssFailed;
 				}
-				break;
-				   }
-				break;
-			case 3:{
-				dest.y -= 1;
-				if (stage -> isInScope(dest)) {
-					cell_node -> m_tarLoc = dest;
-				} else {
-					CCLOG("case 3: (%f,%f)", dest);
-				}
-				break;
-				   }
-				break;
-			default:
-				break;
 			}
+		}
+		
+		if (select_status == edssSuccess){
+			cell_node -> m_tarLoc = dest;
 			cell_node -> beganMove();
 		}
 	}
-	
-
 }

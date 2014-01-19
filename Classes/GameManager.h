@@ -1,7 +1,15 @@
 #pragma once
 #include "cocos2d.h"
 #include "CellSprite.h"
+#include "GameManager.h"
 USING_NS_CC;
+
+enum enumDirectSelectStatus {
+	edssNormal,
+	edssSuccess,
+	edssFailed,
+	edssCanceled
+};
 
 class GameManager {
 private:
