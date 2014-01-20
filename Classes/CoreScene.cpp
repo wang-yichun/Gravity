@@ -16,9 +16,8 @@ bool CoreScene::init() {
 
 	Stage::GetInstance() -> setMother(gameLayer);
 	Stage::GetInstance() -> resetMap();
+	SystemManager::GetInstance() -> do_load_map();
 	Stage::GetInstance() -> refleshCellShow_adv();
-
-	SystemManager::GetInstance(); // init
 
 	GameManager::GetInstance() -> prepareStage(); // init
 	
