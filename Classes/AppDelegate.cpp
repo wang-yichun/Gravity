@@ -4,6 +4,12 @@
 #include "TestScene.h"
 #include "CoreScene.h"
 #include "YFile.h"
+#include "CreaterConfig.h"
+
+#if PROGRAM_MODE == PROGRAM_MODE_CREATER
+#include "MapCreateScene.h"
+#endif
+
 USING_NS_CC;
 using namespace ytools;
 
@@ -20,9 +26,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
 
-    pDirector->setOpenGLView(pEGLView);
+	pDirector->setOpenGLView(pEGLView);
 	
-	pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionShowAll);
 
     // turn on display FPS
     pDirector->setDisplayStats(true);
@@ -46,9 +51,18 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
 
     // create a scene. it's an autorelease object
-    //CCScene *pScene = HelloWorld::scene();
-	//TestScene *pScene = TestScene::create();
+    // CCScene *pScene = HelloWorld::scene();
+	// TestScene *pScene = TestScene::create();
+
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
+	pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionShowAll);
 	CoreScene *pScene = CoreScene::create();
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
+	pEGLView -> setDesignResolutionSize(1280, 900, kResolutionShowAll); 
+	CCScene *pScene = MapCreate::scene();
+#else 
+	CCAssert(false, "PROGRAM_MODE Unexpect.");
+#endif
 
     // run
     pDirector->runWithScene(pScene);
