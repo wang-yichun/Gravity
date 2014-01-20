@@ -25,4 +25,6 @@ public:
 	void prepareStage(); // 准备游戏;
 	void stepStage(); // 游戏进行下一步计算;
 	void stepCellSprites(CellSprite * cell_node);
+
+	void insertSpriteToStage(CCPoint loc);
 };

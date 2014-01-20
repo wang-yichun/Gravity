@@ -13,19 +13,26 @@ bool CoreScene::init() {
 	GameLayer * gameLayer = GameLayer::create();
 	//gameLayer -> setPositionY(50);
 	this -> addChild(gameLayer, 100, 1);
-
 	Stage::GetInstance() -> setMother(gameLayer);
-	Stage::GetInstance() -> resetMap();
-	SystemManager::GetInstance() -> do_load_map();
-	Stage::GetInstance() -> refleshCellShow_adv();
 
-	GameManager::GetInstance() -> prepareStage(); // init
-	
-	schedule(schedule_selector(CoreScene::step), 1.0f);
+
+	// 加载地图;
+	startStage();
 
 	return true;
 }
 
 void CoreScene::step(float dt) {
 	GameManager::GetInstance() -> stepStage();
+}
+
+void CoreScene::startStage() {
+	//Stage::GetInstance() -> resetMap();
+	SystemManager::GetInstance() -> do_load_map();
+	// 更新显示地图;
+	Stage::GetInstance() -> refleshCellShow_adv();
+	// 准备地图其它元素;
+	GameManager::GetInstance() -> prepareStage(); // init
+	// 设置定时器;
+	schedule(schedule_selector(CoreScene::step), 1.0f);
 }

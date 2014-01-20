@@ -25,19 +25,9 @@ GameManager * GameManager::GetInstance() {
 }
 
 void GameManager::prepareStage() {
-	Stage * stage = Stage::GetInstance();
 	// 1. 在舞台增加几个cellsprite;
 	for (int i = 0; i < 10; i++) {
-		CellSprite * sprite = CellSprite::create();
-		CCPoint loc = CCPointMake(0,i);
-		sprite -> m_status = ecssNormal;
-		sprite -> m_curLoc = loc;
-		sprite -> m_tarLoc = loc;
-		sprite -> setPosition(stage -> loc2pos(loc));
-		sprite -> poll();
-		sprite -> runAction_normal();
-		Stage::GetInstance() -> m_mother -> addChild(sprite, 500);
-		m_cellSprites -> addObject(sprite);
+		insertSpriteToStage(ccp(0,i));
 	}
 }
 
@@ -50,4 +40,17 @@ void GameManager::stepStage() {
 
 void GameManager::stepCellSprites(CellSprite * cell_node) {
 	cell_node -> move_random();
+}
+
+void GameManager::insertSpriteToStage(CCPoint loc) {
+	Stage * stage = Stage::GetInstance();
+	CellSprite * sprite = CellSprite::create();
+	sprite -> m_status = ecssNormal;
+	sprite -> m_curLoc = loc;
+	sprite -> m_tarLoc = loc;
+	sprite -> setPosition(stage -> loc2pos(loc));
+	sprite -> poll();
+	sprite -> runAction_normal();
+	Stage::GetInstance() -> m_mother -> addChild(sprite, 500);
+	m_cellSprites -> addObject(sprite);
 }

@@ -20,5 +20,7 @@ public:
 	CREATE_FUNC(CoreScene);
 
 	void step(float dt);
+
+	void startStage();
 };
 
