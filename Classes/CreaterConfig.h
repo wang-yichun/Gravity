@@ -18,3 +18,15 @@
 #define DEBUG_CELL_INFO_SHOW 0
 
 #endif
+
+//////////////////////////////////////////////////////////////////////////
+// 在编码时选择不同程序模式的宏;
+/*
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
+	// TODO:
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
+	// TODO:
+#else
+	CCAssert(false, "PROGRAM_MODE unexpect.");
+#endif
+*/

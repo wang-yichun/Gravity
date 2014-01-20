@@ -24,10 +24,18 @@ void GameLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent) {
 			CCPoint loc = Stage::GetInstance()->pos2loc(pos);
 			int idx = Stage::GetInstance()->pos2idx(pos);
 			CCLOGINFO("ccTouchesBegan pos:(%f,%f) loc:(%f,%f) idx:(%d) tID:(%d)", pos.x, pos.y, loc.x, loc.y, idx, pTouch->getID());
-			// start to change a grid.
+			
+			// USER OPERATE
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
+			// TODO:
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
+#else
+	CCAssert(false, "PROGRAM_MODE unexpect.");
+#endif
+			
 		}
 	}
 }
@@ -41,10 +49,18 @@ void GameLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent) {
 			CCPoint loc = Stage::GetInstance()->pos2loc(pos);
 			int idx = Stage::GetInstance()->pos2idx(pos);
 			CCLOGINFO("ccTouchesMoved pos:(%f,%f) loc:(%f,%f) idx:(%d) tID:(%d)", pos.x, pos.y, loc.x, loc.y, idx, pTouch->getID());
-			// start to change a grid.
+			
+			// USER OPERATE
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
+			// TODO:
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
+#else
+			CCAssert(false, "PROGRAM_MODE unexpect.");
+#endif
+
 		}
 	}
 }
@@ -58,10 +74,18 @@ void GameLayer::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent) {
 			CCPoint loc = Stage::GetInstance()->pos2loc(pos);
 			int idx = Stage::GetInstance()->pos2idx(pos);
 			CCLOGINFO("ccTouchesEnded pos:(%f,%f) loc:(%f,%f) idx:(%d) tID:(%d)", pos.x, pos.y, loc.x, loc.y, idx, pTouch->getID());
-			// start to change a grid.
+			
+			// USER OPERATE
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
+			// TODO:
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
+#else
+			CCAssert(false, "PROGRAM_MODE unexpect.");
+#endif
+
 		}
 	}
 }
