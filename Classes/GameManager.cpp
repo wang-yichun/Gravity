@@ -45,12 +45,12 @@ void GameManager::stepCellSprites(CellSprite * cell_node) {
 void GameManager::insertSpriteToStage(CCPoint loc) {
 	Stage * stage = Stage::GetInstance();
 	CellSprite * sprite = CellSprite::create();
+	Stage::GetInstance() -> m_mother -> addChild(sprite, 500);
 	sprite -> m_status = ecssNormal;
 	sprite -> m_curLoc = loc;
 	sprite -> m_tarLoc = loc;
 	sprite -> setPosition(stage -> loc2pos(loc));
 	sprite -> poll();
 	sprite -> runAction_normal();
-	Stage::GetInstance() -> m_mother -> addChild(sprite, 500);
 	m_cellSprites -> addObject(sprite);
 }

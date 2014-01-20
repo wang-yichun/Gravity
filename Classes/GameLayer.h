@@ -3,6 +3,7 @@
 #include "cocos-ext.h"
 #include "Stage.h"
 #include "SystemManager.h"
+#include "GameManager.h"
 USING_NS_CC;
 USING_NS_CC_EXT;
 

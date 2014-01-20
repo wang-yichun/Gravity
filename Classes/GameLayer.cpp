@@ -78,6 +78,7 @@ void GameLayer::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent) {
 			// USER OPERATE
 #if PROGRAM_MODE == PROGRAM_MODE_GAME
 			// TODO:
+			GameManager::GetInstance() -> insertSpriteToStage(loc);
 #elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);

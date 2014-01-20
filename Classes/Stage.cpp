@@ -96,6 +96,10 @@ void Stage::refleshMapShow() {
 			mc.secondaryNode -> setPosition(pos);
 			m_mother -> addChild(mc.secondaryNode, 110, 2);
 		}
+		if (mc.pollNode != NULL) {
+			mc.pollNode -> setPosition(pos);
+			m_mother -> addChild(mc.pollNode, 200, 4);
+		}
 		if (DEBUG_CELL_INFO_SHOW) {
 			mc.infoTTF -> setPosition(pos);
 			m_mother -> addChild(mc.infoTTF, 200, 3);
