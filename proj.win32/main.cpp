@@ -1,6 +1,7 @@
 #include "main.h"
 #include "AppDelegate.h"
 #include "CCEGLView.h"
+#include "CreaterConfig.h"
 
 USING_NS_CC;
 
@@ -16,7 +17,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     AppDelegate app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
 	eglView->setViewName("Gravity");
+#if PROGRAM_MODE == PROGRAM_MODE_GAME
 	eglView->setFrameSize(1280, 800);
+#elif PROGRAM_MODE == PROGRAM_MODE_CREATER
+	eglView->setFrameSize(1280, 900);
+#else
+	CCAssert(false, "PROGRAM_MODE unexpect.");
+#endif
 	eglView->setFrameZoomFactor(.8f);
     return CCApplication::sharedApplication()->run();
 }
