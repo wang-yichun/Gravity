@@ -4,4 +4,8 @@
     <Project>map_create_widget</Project>
     <GuidesList />
   </GuidesProject>
+  <GuidesProject>
+    <Project>game_ui_widget</Project>
+    <GuidesList />
+  </GuidesProject>
 </ArrayOfGuidesProject>

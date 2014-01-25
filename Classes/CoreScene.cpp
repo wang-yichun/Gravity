@@ -5,11 +5,22 @@
 #include "SystemManager.h"
 #include "GameManager.h"
 
-CoreScene::CoreScene(void) {}
+CoreScene::CoreScene(void):
+	uiWidget(NULL) 
+{}
 
 CoreScene::~CoreScene(void) {}
 
 bool CoreScene::init() {
+
+	// 
+	UILayer * uiLayer = UILayer::create();
+	uiWidget = GUIReader::shareReader()->widgetFromJsonFile("CSProj/game_ui_widget.ExportJson");
+	uiWidget -> setTag(1);
+	uiLayer -> addWidget(uiWidget);
+	this -> addChild(uiLayer, 200, 2);
+
+
 	GameLayer * gameLayer = GameLayer::create();
 	//gameLayer -> setPositionY(50);
 	this -> addChild(gameLayer, 100, 1);

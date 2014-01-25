@@ -1,6 +1,8 @@
 #pragma once
 #include "cocos2d.h"
+#include "cocos-ext.h"
 USING_NS_CC;
+USING_NS_CC_EXT;
 
 //	±³¾°²ã	BgLayer		100		kBgLayer
 //	½ÇÉ«²ã	RoleLayer	200		kRoleLayer
@@ -22,5 +24,6 @@ public:
 	void step(float dt);
 
 	void startStage();
+	UIWidget * uiWidget;
 };
 
