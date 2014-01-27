@@ -13,8 +13,6 @@
   </JsonList>
   <imageFileList>
     <string>CSProj0.plist</string>
-    <string>CSProj1.plist</string>
-    <string>CSProj2.plist</string>
   </imageFileList>
   <JsonSuffix>.json</JsonSuffix>
   <CurrentUIJson>game_ui_widget.json</CurrentUIJson>

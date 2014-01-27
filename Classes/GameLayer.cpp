@@ -9,7 +9,7 @@ GameLayer::~GameLayer()
 bool GameLayer::init() {
 	CCLayerColor::init();
 	setContentSize(CCSizeMake(1280,800));
-	setColor(ccc3(61,62,113));
+	setColor(ccc3(40,40,40));
 	setOpacity(255);
 	setTouchEnabled(true);
 	return true;

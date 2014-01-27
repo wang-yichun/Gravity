@@ -10,9 +10,7 @@
   "designHeight": 800,
   "designWidth": 1280,
   "textures": [
-    "CSProj0.plist",
-    "CSProj1.plist",
-    "CSProj2.plist"
+    "CSProj0.plist"
   ],
   "version": "1.2.0.0",
   "widgetTree": {

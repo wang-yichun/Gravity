@@ -26,9 +26,9 @@ GameManager * GameManager::GetInstance() {
 
 void GameManager::prepareStage() {
 	// 1. 在舞台增加几个cellsprite;
-	for (int i = 0; i < 10; i++) {
-		insertSpriteToStage(ccp(0,i));
-	}
+	//for (int i = 0; i < 10; i++) {
+	//	insertSpriteToStage(ccp(0,i));
+	//}
 }
 
 void GameManager::stepStage() {

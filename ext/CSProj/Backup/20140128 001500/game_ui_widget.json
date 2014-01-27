@@ -50,7 +50,7 @@
           "sizeType": 0,
           "tag": 22,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 119,
           "x": 12,
@@ -96,7 +96,7 @@
           "sizeType": 0,
           "tag": 24,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 107,
           "x": 19,
@@ -142,7 +142,7 @@
           "sizeType": 0,
           "tag": 25,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 84,
           "x": 1270,
@@ -188,7 +188,7 @@
           "sizeType": 0,
           "tag": 26,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 65,
           "x": 640,
@@ -234,7 +234,7 @@
           "sizeType": 0,
           "tag": 33,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 161,
           "x": 1270,
@@ -288,7 +288,7 @@
                   "sizeType": 0,
                   "tag": 43,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 81,
                   "x": 0,
@@ -301,7 +301,7 @@
                   "fileNameData": {
                     "path": "in_game_other/score_star.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "scale9Enable": false,
                   "scale9Height": 77,
@@ -338,7 +338,7 @@
               "sizeType": 0,
               "tag": 56,
               "touchAble": false,
-              "useMergedTexture": true,
+              "useMergedTexture": false,
               "visible": true,
               "width": 92,
               "x": 11,
@@ -351,7 +351,7 @@
               "fileNameData": {
                 "path": "in_game_other/score_star_border.png",
                 "plistFile": null,
-                "resourceType": 1
+                "resourceType": 0
               },
               "scale9Enable": false,
               "scale9Height": 89,
@@ -395,7 +395,7 @@
                   "sizeType": 0,
                   "tag": 43,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 81,
                   "x": 0,
@@ -408,7 +408,7 @@
                   "fileNameData": {
                     "path": "in_game_other/score_star.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "scale9Enable": false,
                   "scale9Height": 77,
@@ -445,7 +445,7 @@
               "sizeType": 0,
               "tag": 56,
               "touchAble": false,
-              "useMergedTexture": true,
+              "useMergedTexture": false,
               "visible": true,
               "width": 92,
               "x": 100,
@@ -458,7 +458,7 @@
               "fileNameData": {
                 "path": "in_game_other/score_star_border.png",
                 "plistFile": null,
-                "resourceType": 1
+                "resourceType": 0
               },
               "scale9Enable": false,
               "scale9Height": 89,
@@ -502,7 +502,7 @@
                   "sizeType": 0,
                   "tag": 43,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": false,
                   "width": 81,
                   "x": 0,
@@ -515,7 +515,7 @@
                   "fileNameData": {
                     "path": "in_game_other/score_star.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "scale9Enable": false,
                   "scale9Height": 77,
@@ -552,7 +552,7 @@
               "sizeType": 0,
               "tag": 56,
               "touchAble": false,
-              "useMergedTexture": true,
+              "useMergedTexture": false,
               "visible": true,
               "width": 92,
               "x": 188,
@@ -565,7 +565,7 @@
               "fileNameData": {
                 "path": "in_game_other/score_star_border.png",
                 "plistFile": null,
-                "resourceType": 1
+                "resourceType": 0
               },
               "scale9Enable": false,
               "scale9Height": 89,
@@ -602,7 +602,7 @@
           "sizeType": 0,
           "tag": 52,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 200,
           "x": 540,
@@ -668,7 +668,7 @@
               "sizeType": 0,
               "tag": 29,
               "touchAble": false,
-              "useMergedTexture": true,
+              "useMergedTexture": false,
               "visible": true,
               "width": 64,
               "x": 0,
@@ -711,7 +711,7 @@
           "sizeType": 0,
           "tag": 27,
           "touchAble": true,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 100,
           "x": 58,
@@ -733,7 +733,7 @@
           "normalData": {
             "path": "in_game_other/round_rect.png",
             "plistFile": null,
-            "resourceType": 1
+            "resourceType": 0
           },
           "pressed": null,
           "pressedData": {
@@ -754,59 +754,6 @@
         "classname": "Panel",
         "name": null,
         "children": [
-          {
-            "classname": "ImageView",
-            "name": null,
-            "children": [],
-            "options": {
-              "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
-              "classname": "ImageView",
-              "name": "pause_node_fill",
-              "ZOrder": 0,
-              "actiontag": 133,
-              "anchorPointX": 0.5,
-              "anchorPointY": 0.5,
-              "classType": null,
-              "colorB": 0,
-              "colorG": 0,
-              "colorR": 0,
-              "flipX": false,
-              "flipY": false,
-              "height": 400,
-              "ignoreSize": false,
-              "layoutParameter": null,
-              "opacity": 240,
-              "positionPercentX": 0.5,
-              "positionPercentY": 0.5,
-              "positionType": 1,
-              "rotation": 0,
-              "scaleX": 1,
-              "scaleY": 1,
-              "sizePercentX": 0.46875,
-              "sizePercentY": 0.5,
-              "sizeType": 0,
-              "tag": 49,
-              "touchAble": false,
-              "useMergedTexture": true,
-              "visible": true,
-              "width": 600,
-              "x": 640,
-              "y": 400,
-              "capInsetsHeight": 0,
-              "capInsetsWidth": 0,
-              "capInsetsX": 0,
-              "capInsetsY": 0,
-              "fileName": null,
-              "fileNameData": {
-                "path": "in_game_other/round_rect_fill.png",
-                "plistFile": null,
-                "resourceType": 1
-              },
-              "scale9Enable": true,
-              "scale9Height": 400,
-              "scale9Width": 600
-            }
-          },
           {
             "classname": "ImageView",
             "name": null,
@@ -844,7 +791,7 @@
                   "sizeType": 0,
                   "tag": 40,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 129,
                   "x": 0,
@@ -890,7 +837,7 @@
                   "sizeType": 0,
                   "tag": 46,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 249,
                   "x": -206,
@@ -936,7 +883,7 @@
                   "sizeType": 0,
                   "tag": 47,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 350,
                   "x": -206,
@@ -982,7 +929,7 @@
                   "sizeType": 0,
                   "tag": 48,
                   "touchAble": false,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 246,
                   "x": -206,
@@ -1032,7 +979,7 @@
                       "sizeType": 0,
                       "tag": 42,
                       "touchAble": false,
-                      "useMergedTexture": true,
+                      "useMergedTexture": false,
                       "visible": true,
                       "width": 63,
                       "x": 0,
@@ -1075,7 +1022,7 @@
                   "sizeType": 0,
                   "tag": 27,
                   "touchAble": true,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 140,
                   "x": -175,
@@ -1097,7 +1044,7 @@
                   "normalData": {
                     "path": "in_game_other/round_rect.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "pressed": null,
                   "pressedData": {
@@ -1144,14 +1091,14 @@
                       "positionPercentY": 0,
                       "positionType": 0,
                       "rotation": 0,
-                      "scaleX": 1.2,
-                      "scaleY": 1.2,
+                      "scaleX": 1,
+                      "scaleY": 1,
                       "sizePercentX": 0,
                       "sizePercentY": 0,
                       "sizeType": 0,
                       "tag": 39,
                       "touchAble": false,
-                      "useMergedTexture": true,
+                      "useMergedTexture": false,
                       "visible": true,
                       "width": 62,
                       "x": 0,
@@ -1194,7 +1141,7 @@
                   "sizeType": 0,
                   "tag": 27,
                   "touchAble": true,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 150,
                   "x": 0,
@@ -1216,7 +1163,7 @@
                   "normalData": {
                     "path": "in_game_other/round_rect.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "pressed": null,
                   "pressedData": {
@@ -1270,7 +1217,7 @@
                       "sizeType": 0,
                       "tag": 44,
                       "touchAble": false,
-                      "useMergedTexture": true,
+                      "useMergedTexture": false,
                       "visible": true,
                       "width": 58,
                       "x": 0,
@@ -1313,7 +1260,7 @@
                   "sizeType": 0,
                   "tag": 27,
                   "touchAble": true,
-                  "useMergedTexture": true,
+                  "useMergedTexture": false,
                   "visible": true,
                   "width": 140,
                   "x": 173,
@@ -1335,7 +1282,7 @@
                   "normalData": {
                     "path": "in_game_other/round_rect.png",
                     "plistFile": null,
-                    "resourceType": 1
+                    "resourceType": 0
                   },
                   "pressed": null,
                   "pressedData": {
@@ -1357,7 +1304,7 @@
               "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
               "classname": "ImageView",
               "name": "pause_node",
-              "ZOrder": 1,
+              "ZOrder": 0,
               "actiontag": 92,
               "anchorPointX": 0.5,
               "anchorPointY": 0.5,
@@ -1382,7 +1329,7 @@
               "sizeType": 0,
               "tag": 36,
               "touchAble": false,
-              "useMergedTexture": true,
+              "useMergedTexture": false,
               "visible": true,
               "width": 600,
               "x": 640,
@@ -1395,7 +1342,7 @@
               "fileNameData": {
                 "path": "in_game_other/round_rect.png",
                 "plistFile": null,
-                "resourceType": 1
+                "resourceType": 0
               },
               "scale9Enable": true,
               "scale9Height": 400,
@@ -1432,7 +1379,7 @@
           "sizeType": 1,
           "tag": 35,
           "touchAble": false,
-          "useMergedTexture": true,
+          "useMergedTexture": false,
           "visible": true,
           "width": 1280,
           "x": -1,
@@ -1491,7 +1438,7 @@
       "sizeType": 0,
       "tag": 21,
       "touchAble": false,
-      "useMergedTexture": true,
+      "useMergedTexture": false,
       "visible": true,
       "width": 1280,
       "x": 0,
