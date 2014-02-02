@@ -40,15 +40,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("CSProj/CSProj0.plist");
 
 	// init database
-	bool _has_file;
-	_has_file = YFile::HasFileInWritablePath("mytest.db");
-	CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
-	YFile::DeleteFileInWritablePath("mytest.db");
-	_has_file = YFile::HasFileInWritablePath("mytest.db");
-	CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
-	YFile::CopyFileToWritablePath("mytest.db");
-	_has_file = YFile::HasFileInWritablePath("mytest.db");
-	CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
+	//bool _has_file;
+	//_has_file = YFile::HasFileInWritablePath("mytest.db");
+	//CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
+	//YFile::DeleteFileInWritablePath("mytest.db");
+	//_has_file = YFile::HasFileInWritablePath("mytest.db");
+	//CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
+	//YFile::CopyFileToWritablePath("mytest.db");
+	//_has_file = YFile::HasFileInWritablePath("mytest.db");
+	//CCLOGINFO("has_file: %s", _has_file?"Yes":"No");
 
     // create a scene. it's an autorelease object
     // CCScene *pScene = HelloWorld::scene();

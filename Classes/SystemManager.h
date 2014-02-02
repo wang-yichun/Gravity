@@ -18,6 +18,7 @@ private:
 	virtual ~SystemManager();
 	static SystemManager * s_SystemManager;
 	bool init();
+	int version();
 public:
 	static SystemManager * GetInstance();
 

@@ -36,7 +36,6 @@ void MapCell::setMapCell(CCPoint loc, enumMapCellCode code) {
 
 void MapCell::setCode(enumMapCellCode _code) {
 	this -> code = _code;
-    this -> poll_code = emcpcNull;
     if (DEBUG_CELL_INFO_SHOW) {
         stringstream ss;
         ss << loc.x << "," << loc.y << endl;
@@ -54,13 +53,31 @@ void MapCell::setCode(enumMapCellCode _code) {
 }
 
 void MapCell::setPollCode(enumMapCellPollCode poll_code) {
-	if (this -> poll_code == emcpcNull) {
+	if (poll_code == emcpcNull && this -> poll_code != emcpcNull) {
+		this -> poll_code = poll_code;
+		if (pollSprite != NULL) {
+			pollSprite -> runAction(CCFadeOut::create(.5f));
+		}
+	} else if (poll_code == emcpcPoll && this -> poll_code != emcpcPoll) {
 		this -> poll_code = poll_code;
 		pollSprite = CCSprite::createWithSpriteFrameName("mapcell/poll_red.png");
 		pollSprite -> setOpacity(0);
 		pollSprite -> runAction(CCFadeIn::create(1.0f));
 		pollNode -> removeAllChildren();
 		pollNode -> addChild(pollSprite);
+	}
+}
+
+void MapCell::refleshPollCode() {
+	pollNode -> removeAllChildren();
+	if (poll_code != emcpcNull) {
+		if (poll_code == emcpcPoll) {
+			pollSprite = CCSprite::createWithSpriteFrameName("mapcell/poll_red.png");
+			pollSprite -> setOpacity(0);
+			pollSprite -> runAction(CCFadeIn::create(1.0f));
+			pollNode -> removeAllChildren();
+			pollNode -> addChild(pollSprite);
+		}
 	}
 }
 

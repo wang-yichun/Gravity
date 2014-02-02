@@ -26,11 +26,19 @@ bool SystemManager::init() {
 	CCLOG("%s", ss_info.str().c_str());
 	ss_info.str("");
 
+	int last_db_ver = CCUserDefault::sharedUserDefault() -> getIntegerForKey("system_db_version", 0);
+	int cur_db_ver = version();
+	if (last_db_ver < cur_db_ver) {
+		last_db_ver = cur_db_ver;
+		CCUserDefault::sharedUserDefault() -> setIntegerForKey("system_db_version", cur_db_ver);
+		// 删原来的数据库;
+		ytools::YFile::DeleteFileInWritablePath("game_data.sqlite");
+	}
 	if (ytools::YFile::HasFileInWritablePath("game_data.sqlite")) {
-		CCLOG("game_data.sqlite is already exists.");
+		CCLOG("db file is already exists.");
 	} else {
 		ytools::YFile::CopyFileToWritablePath("game_data.sqlite");	
-		CCLOG("game_data.sqlite has been copied.");
+		CCLOG("db file has been copied.");
 	}
 
 	m_db_full_path = writable_path + "game_data.sqlite";
@@ -39,6 +47,10 @@ bool SystemManager::init() {
 	//select_stage();
 
 	return true;
+}
+
+int SystemManager::version() {
+	return 140202018;
 }
 
 SystemManager * SystemManager::GetInstance() {
@@ -128,14 +140,15 @@ void SystemManager::insert_stage_code_map(int stage_id) {
 		Kompex::SQLiteDatabase *pDatabase = new Kompex::SQLiteDatabase(m_db_full_path.c_str(), SQLITE_OPEN_READWRITE, 0);
 		Kompex::SQLiteStatement *pStmt = new Kompex::SQLiteStatement(pDatabase);
 
-		pStmt -> Sql("INSERT INTO stage_code_map (cell_code, cell_idx, stage_id) VALUES(@cell_code, @cell_idx, @stage_id)");
+		pStmt -> Sql("INSERT INTO stage_code_map (cell_poll_code, cell_code, cell_idx, stage_id) VALUES(@cell_poll_code, @cell_code, @cell_idx, @stage_id)");
 
 		vector<MapCell>& v_map = Stage::GetInstance() -> m_Map;
-		for (int idx = 0; idx < v_map.size(); idx++) {
+		for (int idx = 0; idx < (size_t)v_map.size(); idx++) {
 			pStmt -> Reset();
-			pStmt -> BindInt(1, v_map[idx].code);
-			pStmt -> BindInt(2, idx);
-			pStmt -> BindInt(3, stage_id);
+			pStmt -> BindInt(1, v_map[idx].poll_code);
+			pStmt -> BindInt(2, v_map[idx].code);
+			pStmt -> BindInt(3, idx);
+			pStmt -> BindInt(4, stage_id);
 			pStmt -> Execute();
 		}
 
@@ -211,6 +224,8 @@ void SystemManager::select_stage_code_map(int stage_id) {
 			MapCell mc;
 			CCPoint loc = Stage::GetInstance() -> idx2loc(pStmt -> GetColumnInt("cell_idx"));
 			mc.setMapCell(loc, (enumMapCellCode)(pStmt -> GetColumnInt("cell_code")));
+			mc.poll_code = (enumMapCellPollCode)(pStmt -> GetColumnInt("cell_poll_code"));
+			//mc.setPollCode((enumMapCellPollCode)(pStmt -> GetColumnInt("cell_poll_code")));
 			map.push_back(mc);
 		}
 

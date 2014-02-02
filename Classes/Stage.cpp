@@ -42,11 +42,12 @@ void Stage::resetMap() {
 			
 			MapCell mc;
 			//if ( (x + y) % 2 == 0) {
-				if (CCRANDOM_MINUS1_1() > 0) {
-					mc.setMapCell(CCPointMake(x,y), kNormal);
-				} else {
+				//if (CCRANDOM_MINUS1_1() > 0) {
+				//	mc.setMapCell(CCPointMake(x,y), kNormal);
+				//} else {
 					mc.setMapCell(CCPointMake(x,y), kNull);
-				}
+					mc.setPollCode(emcpcNull);
+				//}
 			//}
 
 			m_Map.push_back(mc);
@@ -104,6 +105,7 @@ void Stage::refleshMapShow() {
 			mc.infoTTF -> setPosition(pos);
 			m_mother -> addChild(mc.infoTTF, 200, 3);
 		}
+		mc.refleshPollCode();
 	}
 }
 

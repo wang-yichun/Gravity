@@ -43,6 +43,7 @@ public:
 	void setMapCell(CCPoint loc, enumMapCellCode code); // create一些空的CCNode用于将来填充CCSprite,内部调用setCode,即只有在第一次初始化时调用,以后的改变使用setCode;
 	void setCode(enumMapCellCode _code); // 设置code后调用refleshSprite;
 	void setPollCode(enumMapCellPollCode _poll_code);
+	void refleshPollCode(); //
 	void setParent(CCNode *pNode);
 	void refleshSprite_adv(char * param); // 这个显示功能完成了周边相关显示,传入的是九宫格的模式 xxxxxxxxx;
 
