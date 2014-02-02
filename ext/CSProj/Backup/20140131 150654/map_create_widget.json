@@ -1007,7 +1007,7 @@
               "touchAble": false,
               "useMergedTexture": false,
               "visible": true,
-              "width": 67,
+              "width": 162,
               "x": 0,
               "y": 0,
               "fileNameData": {
@@ -1015,7 +1015,7 @@
                 "plistFile": null,
                 "resourceType": 0
               },
-              "text": "red"
+              "text": "poll_red"
             }
           }
         ],

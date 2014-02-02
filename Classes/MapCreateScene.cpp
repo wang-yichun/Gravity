@@ -126,7 +126,7 @@ bool MapCreate::init()
 
 	SystemManager::GetInstance(); // init
 	this -> setCurrentCellCodeBtnEnabled();
-
+	this -> setCurrentCellPollCodeBtnEnabled();
     return true;
 }
 

@@ -15,7 +15,7 @@
     <string>CSProj0.plist</string>
   </imageFileList>
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson>game_ui_widget.json</CurrentUIJson>
+  <CurrentUIJson>map_create_widget.json</CurrentUIJson>
   <CanvasSize>
     <Width>1280</Width>
     <Height>800</Height>

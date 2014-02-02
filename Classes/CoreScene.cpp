@@ -41,7 +41,7 @@ void CoreScene::startStage() {
 	//Stage::GetInstance() -> resetMap();
 	SystemManager::GetInstance() -> do_load_map();
 	// 更新显示地图;
-	Stage::GetInstance() -> refleshCellShow_adv();
+	//Stage::GetInstance() -> refleshCellShow_adv();
 	// 准备地图其它元素;
 	GameManager::GetInstance() -> prepareStage(); // init
 	// 设置定时器;

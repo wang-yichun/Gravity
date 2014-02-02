@@ -30,7 +30,9 @@ void GameLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent) {
 			// TODO:
 #elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
+			enumMapCellPollCode cell_poll_code = SystemManager::GetInstance()->m_chosedCellPollCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
+			Stage::GetInstance()->cell(idx).setPollCode(cell_poll_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
 #else
 	CCAssert(false, "PROGRAM_MODE unexpect.");
@@ -55,7 +57,9 @@ void GameLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent) {
 			// TODO:
 #elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
+			enumMapCellPollCode cell_poll_code = SystemManager::GetInstance()->m_chosedCellPollCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
+			Stage::GetInstance()->cell(idx).setPollCode(cell_poll_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
 #else
 			CCAssert(false, "PROGRAM_MODE unexpect.");
@@ -78,10 +82,12 @@ void GameLayer::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent) {
 			// USER OPERATE
 #if PROGRAM_MODE == PROGRAM_MODE_GAME
 			// TODO:
-			GameManager::GetInstance() -> insertSpriteToStage(loc);
+			GameManager::GetInstance() -> touchAPoint(loc);
 #elif PROGRAM_MODE == PROGRAM_MODE_CREATER
 			enumMapCellCode cell_code = SystemManager::GetInstance()->m_chosedCellCode;
+			enumMapCellPollCode cell_poll_code = SystemManager::GetInstance()->m_chosedCellPollCode;
 			Stage::GetInstance()->cell(idx).setCode(cell_code);
+			Stage::GetInstance()->cell(idx).setPollCode(cell_poll_code);
 			Stage::GetInstance()->refleshCellShow_adv_nine(loc);
 #else
 			CCAssert(false, "PROGRAM_MODE unexpect.");

@@ -26,5 +26,6 @@ public:
 	void stepStage(); // 游戏进行下一步计算;
 	void stepCellSprites(CellSprite * cell_node);
 
+	void touchAPoint(CCPoint loc);
 	void insertSpriteToStage(CCPoint loc);
 };

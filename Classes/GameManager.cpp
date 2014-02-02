@@ -25,10 +25,7 @@ GameManager * GameManager::GetInstance() {
 }
 
 void GameManager::prepareStage() {
-	// 1. 在舞台增加几个cellsprite;
-	//for (int i = 0; i < 10; i++) {
-	//	insertSpriteToStage(ccp(0,i));
-	//}
+	
 }
 
 void GameManager::stepStage() {
@@ -40,6 +37,15 @@ void GameManager::stepStage() {
 
 void GameManager::stepCellSprites(CellSprite * cell_node) {
 	cell_node -> move_random();
+}
+
+void GameManager::touchAPoint(CCPoint loc) {
+	Stage * stage = Stage::GetInstance();
+	if (stage -> cell(loc).poll_code == emcpcPoll) {
+		insertSpriteToStage(loc);
+	} else {
+		// TODO: 提示:请在污染格内放置精灵;
+	}
 }
 
 void GameManager::insertSpriteToStage(CCPoint loc) {
